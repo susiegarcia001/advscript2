@@ -1,0 +1,10 @@
+body {
+    background-color: #E0FFFF;
+}
+.spinner {
+    display: none;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+}

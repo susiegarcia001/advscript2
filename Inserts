@@ -1,0 +1,204 @@
+CREATE TABLE makes (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    hq VARCHAR(100) NOT NULL,
+    creation_date DATE,
+    PRIMARY KEY (id)
+);
+
+INSERT INTO makes (id, name, hq, creation_date) 
+VALUES
+1    ('', 'Ford', 'Detroit', now()), 
+2    ('', 'Chevy', 'Detroit', ''),
+3    ('', 'Dodge', 'Detroit', ''),
+4    ('', 'Hyundai', 'Seoul', ''),
+5    ('', 'Toyota', 'Tokyo', '');
+    
+
+    
+CREATE TABLE models (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    make VARCHAR(50) NOT NULL,
+    creation_date DATE,
+    PRIMARY KEY (id)
+);
+    
+INSERT INTO models (id, name, make, creation_date) 
+VALUES
+    ('', 'Fiesta', '1', now()),
+    ('', 'Focus',  '1', now()),
+    ('', 'Escape', '1', now()),
+    ('', 'Edge',   '1', now()),
+    ('', 'Explorer', '1', now()),
+    ('', 'Cruze', '2', now()),
+    ('', 'Malibu', '2', now()),
+    ('', 'Impala', '2', now()),
+    ('', 'Silverado', '2', now()),
+    ('', 'Tahoe', '2', now()),  
+    ('', 'Dart', '3', now()),
+    ('', 'Charger', '3', now()),
+    ('', 'Journey', '3', now()),
+    ('', 'Durango', '3', now()),
+    ('', 'Caravan', '3', now()),
+    ('', 'Elantra', '4', now()),
+    ('', 'Veloster', '4', now()),
+    ('', 'Sonata', '4', now()),
+    ('', 'Tucson', '4', now()),
+    ('', 'Santa Fe', '4', now()),
+    ('', 'Corolla', '5', now()),
+    ('', 'Camry', '5', now()),
+    ('', '4Runner', '5', now()),
+    ('', 'Tacoma', '5', now()),
+    ('', 'Tundra', '5', now());
+
+
+
+CREATE TABLE engines (
+    id INT NOT NULL AUTO_INCREMENT,
+    size VARCHAR(50) NOT NULL,
+    model VARCHAR(50) NOT NULL,
+    make VARCHAR(50) NOT NULL,
+    creation_date DATE,
+    PRIMARY KEY (id)
+);
+
+INSERT INTO engines (id, size, model, make, creation_date)
+VALUES
+    ('', '1.6L I-4', '1', '1', now()),
+    ('', '1.0L EcoBoost I-3', '1', '1', now()),
+    ('', '1.6L Turbo EcoBoost I-4', '1', '1', now()),
+    ('', '2.0L I-4 Flex Fuel', '2', '1', now()),
+    ('', '1.0L EcoBoost I-3 Auto Start/Stop', '2', '1', now()),
+    ('', '2.0L EcoBoost I-4', '2', '1', now()),
+    ('', '2.3L EcoBoost I-4', '2', '1', now()),
+    ('', '2.5L Duratec I-4', '3', '1', now()),
+    ('', '1.6L EcoBoost I-4', '3', '1', now()),
+    ('', '2.0L EcoBoost I-4', '3', '1', now()),
+    ('', '2.0L Turbo EcoBoost I-4', '4', '1', now()),
+    ('', '2.7L Turbo EcoBoost V-6', '4', '1', now()),
+    ('', '3.5L V-6', '4', '1', now()),
+    ('', '3.5L V-6', '5', '1', now()),
+    ('', '2.3L EcoBoost I-4', '5', '1', now()),
+    ('', '3.5L EcoBoost V-6', '5', '1', now()),
+    ('', '1.8L ECOTEC I-4', '6', '2', now()),
+    ('', '1.4L ECOTEC I-4', '6', '2', now()),
+    ('', '2.0L Turbo Diesel I-4', '6', '2', now()),
+    ('', '2.5L ECOTEC I-4', '7', '2', now()),
+    ('', '2.0L Turbo I-4', '7', '2', now()),
+    ('', '3.6L V-6', '8', '2', now()),
+    ('', '2.5L I-4 Auto Start/Stop', '8', '2', now()),
+    ('', '4.3L ECOTEC3 V-6', '9', '2', now()),
+    ('', '5.3L ECOTEC3 V-8', '9', '2', now()),
+    ('', '6.2L ECOTEC3 V-8', '9', '2', now()),
+    ('', '5.3L ECOTEC3 V-8', '10', '2', now()),
+    ('', '2.0L TIGERSHARK I-4', '11', '3', now()),
+    ('', '1.4L MULTIAIR Turbo I-4', '11', '3', now()),
+    ('', '2.4L TIGERSHARK MULTIAIR 2 I-4', '11', '3', now()),
+    ('', '6.2L HEMI SRT HELLCAT V-8', '12', '3', now()),
+    ('', '6.4L HEMI V-8', '12', '3', now()),
+    ('', '5.7L HEMI V-8', '12', '3', now()),
+    ('', '3.6L PENTASTAR V-6', '12', '3', now()),
+    ('', '2.4L I-4', '13', '3', now()),
+    ('', '3.6L PENTASTAR V-6', '13', '3', now()),
+    ('', '3.6L PENTASTAR V-6', '14', '3', now()),
+    ('', '5.7L HEMI V-8', '14', '3', now()),
+    ('', '3.6L PENTASTAR V-6', '15', '3', now()),
+    ('', '1.8L I-4', '16', '4', now()),
+    ('', '2.0L I-4', '16', '4', now()),
+    ('', '1.6L I-4', '17', '4', now()),
+    ('', '2.6L Turbo I-4', '17', '4', now()),
+    ('', '2.4L I-4', '18', '4', now()),
+    ('', '2.0L Turbo I-4', '18', '4', now()),
+    ('', '1.6L Turbo I-4', '18', '4', now()),
+    ('', '2.0L I-4', '19', '4', now()),
+    ('', '1.6L Turbo I-4', '19', '4', now()),
+    ('', '3.3L V-6', '20', '4', now()),
+    ('', '1.8L 140-hp I-4', '21', '5', now()),
+    ('', '1.8L 132-hp I-4', '21', '5', now()),
+    ('', '2.5L I-4', '22', '5', now()),
+    ('', '4.0L V-6', '23', '5', now()),
+    ('', '2.4L I-4', '24', '5', now()),
+    ('', '2.7L I-4', '24', '5', now()),
+    ('', '3.4L V-6', '24', '5', now()),
+    ('', '4.6L i-FORCE V-8', '25', '5', now()),
+    ('', '5.7L i-FORCE V-8', '25', '5', now()),
+    ('', '5.7L i-FORCE V-8 Flex Fuel', '25', '5', now());
+
+
+
+
+
+API Key
+
+AIzaSyDGBzOg6WvEH20m6SRG04_kQKCvd9YEmI0
+
+
+
+  
+    // This example adds a search box to a map, using the Google Place Autocomplete
+    // feature. People can enter geographical searches. The search box will return a
+    // pick list containing a mix of places and predicted search terms.
+
+    function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -33.8688, lng: 151.2195},
+        zoom: 13,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    // Create the search box and link it to the UI element.
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+    // Bias the SearchBox results towards current map's viewport.
+        map.addListener('bounds_changed', function() {
+        searchBox.setBounds(map.getBounds());
+    });
+
+        var markers = [];
+    // Listen for the event fired when the user selects a prediction and retrieve
+    // more details for that place.
+        searchBox.addListener('places_changed', function() {
+        var places = searchBox.getPlaces();
+
+        if (places.length == 0) {
+        return;
+    }
+
+    // Clear out the old markers.
+        markers.forEach(function(marker) {
+        marker.setMap(null);
+    });
+        markers = [];
+
+    // For each place, get the icon, name and location.
+        var bounds = new google.maps.LatLngBounds();
+        places.forEach(function(place) {
+        var icon = {
+        url: place.icon,
+        size: new google.maps.Size(71, 71),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(25, 25)
+    };
+
+    // Create a marker for each place.
+        markers.push(new google.maps.Marker({
+        map: map,
+        icon: icon,
+        title: place.name,
+        position: place.geometry.location
+    }));
+
+        if (place.geometry.viewport) {
+        // Only geocodes have viewport.
+        bounds.union(place.geometry.viewport);
+    } else {
+        bounds.extend(place.geometry.location);
+    }
+    });
+        map.fitBounds(bounds);
+    });
+    }

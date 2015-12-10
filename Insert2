@@ -1,0 +1,33 @@
+CREATE TABLE models (
+    id INT(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    make INT(10) NOT NULL
+);
+
+INSERT INTO models (id, name, make)
+VALUES
+('', 'Fiesta', '1'),
+('', 'Focus', '1'),
+('', 'Mustang', '1'),
+('', 'Expedition', '1'),
+('', 'F-150', '1'),
+('', 'Malibu', '2'),
+('', 'Camaro', '2'),
+('', 'Tahoe', '2'),
+('', 'Silverado', '2'),
+('', 'Suburban', '2'),
+('', 'Challenger', '3'),
+('', 'Durango', '3'),
+('', 'Ram 1500', '3'),
+('', 'Dart', '3'),
+('', 'Grand Caravan', '3'),
+('', 'Maxima', '4'),
+('', '370Z Coupe', '4'),
+('', 'Armada', '4'),
+('', 'Titan', '4'),
+('', 'Quest', '4'),
+('', 'MKC', '5'),
+('', 'MKX', '5'),
+('', 'Navigator', '5'),
+('', 'MKZ', '5'),
+('', 'MKS', '5');

@@ -1,0 +1,117 @@
+CREATE TABLE makes (
+    id INT(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL
+);
+
+
+INSERT INTO makes (id, name)
+VALUES
+('', 'Ford'),
+('', 'Chevrolet'),
+('', 'Dodge'),
+('', 'Nissan'),
+('', 'Lincoln');
+
+
+
+
+
+
+
+<form id="contactForm" action="contact_form.php" method="post">
+        <!--<form class="ajax-fun">-->
+            <select id="makes" name="makes"></select>
+            <select id="models" name="models"></select>
+            <select id="engines" name="engines"></select><br /><br />
+            
+            <input type="text" id="name" name="name" placeholder="Name"  style="width: 200px;"/><br /><br />
+           
+            <input type="tel" id="phone" name="phone"  placeholder="Phone" style="width: 200px;"/><br /><br />
+            
+            <input type="email" id="email" name="email" placeholder="Email" style="width: 200px;"/><br /><br />
+            
+            <input type="text" id="zip" name="zip" placeholder="Zip Code" style="width: 200px;"/><br /><br />
+            
+            Best way to contact you:<br />
+            <input type="radio" name="contact" value="phone"> Phone<br>
+            <input type="radio" name="contact" value="email"> Email<br>
+            <br />
+            <input id="submit" type="submit" name="submit" value="Send" /> 
+        </form>
+        
+        
+        
+        $(document).ready(function($){
+
+    // hide messages 
+    $("#error").hide();
+    $("#sent-form-msg").hide();
+
+    // on submit...
+    $("#contactForm #submit").click(function() {
+        $("#error").hide();
+
+        //required:
+
+        //name
+        var name = $("input#name").val();
+        if(name == ""){
+            $("#error").fadeIn().text("Name required.");
+            $("input#name").focus();
+            return false;
+        }
+
+        // email
+        var phone = $("input#phone").val();
+        if(phone == ""){
+            $("#error").fadeIn().text("Phone required");
+            $("input#phone").focus();
+            return false;
+        }
+
+        // contact_no
+        var email = $("input#email").val();
+        if(email == ""){
+            $("#error").fadeIn().text("Email required");
+            $("input#email").focus();
+            return false;
+        }
+
+        var zip = $("input#zip").val();
+        if(zip == ""){
+            $("#error").fadeIn().text("Zip required");
+            $("input#zip").focus();
+            return false;
+        }
+        
+        var contact = $("input#contact").val();
+        if(contact == ""){
+            $("#error").fadeIn().text("Contact required");
+            $("input#contact").focus();
+            return false;
+        }
+
+        // data string
+        var dataString = 'name='+ name
+                        + '&phone=' + phone        
+                        + '&email=' + email
+                        + '&zip=' + zip
+                        + '&contact' + contact
+
+        // ajax
+        $.ajax({
+            type:"POST",
+            data: dataString,
+            success: success()
+        });
+    });  
+
+
+    // on success...
+     function success(){
+        $("#sent-form-msg").fadeIn();
+        $("#contactForm").fadeOut();
+     }
+
+    return false;
+});//end document
